@@ -1,4 +1,4 @@
-package com.iruda.foodiescompose.presentation
+package com.iruda.foodiescompose
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

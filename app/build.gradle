@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace 'com.iruda.foodiescompose'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.iruda.foodiescompose"
         minSdk 24
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -37,7 +37,7 @@ android {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion '1.1.1'
+        kotlinCompilerExtensionVersion '1.4.4'
     }
     packagingOptions {
         resources {
@@ -47,6 +47,9 @@ android {
 }
 
 dependencies {
+
+    implementation project(path: ':domain')
+    implementation project(path: ':data')
 
     //Default
     implementation "androidx.core:core-ktx:$core_ktx_version"

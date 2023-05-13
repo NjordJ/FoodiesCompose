@@ -5,11 +5,11 @@ plugins {
 
 android {
     namespace 'com.iruda.domain'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         minSdk 24
-        targetSdk 32
+        targetSdk 33
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -32,7 +32,7 @@ android {
 
 dependencies {
 
-    implementation "androidx.core:core-ktx:$core_ktx_version"
+    api "androidx.core:core-ktx:$core_ktx_version"
     testImplementation "junit:junit:$junit_version"
     androidTestImplementation "androidx.test.ext:junit:$junit_ext_version"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
