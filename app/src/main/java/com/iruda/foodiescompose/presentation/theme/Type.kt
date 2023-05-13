@@ -1,4 +1,4 @@
-package com.iruda.foodiescompose.ui.theme
+package com.iruda.foodiescompose.presentation.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
