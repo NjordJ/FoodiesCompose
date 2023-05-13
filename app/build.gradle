@@ -69,5 +69,18 @@ dependencies {
     implementation "io.insert-koin:koin-androidx-compose:$koin_version"
 
     //Navigation
-    implementation "androidx.navigation:navigation-compose:$nav_version"
+    // Navigator
+    implementation "cafe.adriel.voyager:voyager-navigator:$voyager_version"
+    // BottomSheetNavigator
+    implementation "cafe.adriel.voyager:voyager-bottom-sheet-navigator:$voyager_version"
+    // TabNavigator
+    implementation "cafe.adriel.voyager:voyager-tab-navigator:$voyager_version"
+    // Transitions
+    implementation "cafe.adriel.voyager:voyager-transitions:$voyager_version"
+    // Android
+    // Android ViewModel integration
+    implementation "cafe.adriel.voyager:voyager-androidx:$voyager_version"
+    // Koin integration
+    implementation "cafe.adriel.voyager:voyager-koin:$voyager_version"
+
 }
