@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -28,7 +27,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.core.screen.Screen
+import cafe.adriel.voyager.navigator.LocalNavigator
+import cafe.adriel.voyager.navigator.currentOrThrow
 import com.iruda.foodiescompose.R
+import com.iruda.foodiescompose.presentation.cart.screens.CartScreen
 
 class CatalogueScreen : Screen {
 
@@ -53,13 +55,15 @@ class CatalogueScreen : Screen {
                 SearchButton()
             }
             FoodCategories()
+            CartButton()
             ListOfFood()
+            CartButton()
         }
     }
 
     @Composable
     private fun FilterButton() {
-        Box() {
+        Box {
             Image(painter = painterResource(id = R.drawable.filter),
                 contentDescription = null,
                 modifier = Modifier
@@ -80,7 +84,7 @@ class CatalogueScreen : Screen {
 
     @Composable
     private fun SearchButton() {
-        Box() {
+        Box {
             Image(painter = painterResource(id = R.drawable.search),
                 contentDescription = null,
                 modifier = Modifier
@@ -88,7 +92,8 @@ class CatalogueScreen : Screen {
         }
     }
 
-    val filters = listOf("Filter 1", "Filter 2", "Filter 3", "Filter 4", "Filter 5", "Filter 6")
+    private val filters =
+        listOf("Filter 1", "Filter 2", "Filter 3", "Filter 4", "Filter 5", "Filter 6")
 
     @Composable
     private fun FoodCategories() {
@@ -109,7 +114,7 @@ class CatalogueScreen : Screen {
         )
     }
 
-    val foodList = listOf(
+    private val foodList = listOf(
         Food(name = "Food1", weight = 500.0, price = 25.0),
         Food(name = "Food2", weight = 500.0, price = 25.0),
         Food(name = "Food3", weight = 500.0, price = 25.0),
@@ -157,6 +162,16 @@ class CatalogueScreen : Screen {
             }
         }
 
+    }
+
+    @Composable
+    private fun CartButton() {
+        val navigator = LocalNavigator.currentOrThrow
+        Button(
+            onClick = { navigator.push(CartScreen()) }
+        ) {
+            Text(text = "Cart")
+        }
     }
 }
 
